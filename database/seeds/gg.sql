@@ -1,4 +1,8 @@
+SHOW tables;
 select * from articles;
-select * from users;
+select * from countries;
+
+select * from lessons;
+
 
 

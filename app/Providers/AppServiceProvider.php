@@ -2,7 +2,9 @@
 
 namespace App\Providers;
 
+use Faker\Factory;
 use Illuminate\Support\ServiceProvider;
+use Faker\Generator as FakerGenerator;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -14,6 +16,11 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         //
+        $this->app->singleton(FakerGenerator::class,function()
+        {
+            return Factory::create('zh_CN');
+        });
+
     }
 
     /**

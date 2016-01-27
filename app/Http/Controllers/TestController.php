@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Helpers\Contracts\RocketShipContract;
+use App\Libs\TestProvider;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -15,16 +17,23 @@ class TestController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(TestProvider $testProvider)
     {
-        $test = 'ross';
+        $test = $testProvider->test(5);
+        //$test = 'ross';
         return view('welcome',compact('test'));
     }
 
     public function test()
     {
         $test = ['data','hello'];
+        var_dump($test);die;
         return $test;
+    }
+    public function rock(RocketShipContract $rocketship)
+    {
+        $boom = $rocketship->blastOff();
+        dd($boom);
     }
     /**
      * Show the form for creating a new resource.

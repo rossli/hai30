@@ -40,7 +40,22 @@ Route::get('/test/middleware',['middleware'=>'admin',function()
     return '是管理员';
 }]);
 
-/**
- * 这里可以 用匿名回调函数来添加数据
- */
-Route::get( '/test', 'TestController@index');
+
+Route::get('/test',function()
+{
+    // hello
+    new Ross\Test\Test();
+});
+
+Route::get('/help',function()
+{
+   new  Help\Helpers();
+});
+
+Route::get('/ross','RossController@index');
+Route::get('/rock','TestController@rock');
+Route::get('/lessons',function()
+{
+
+   return
+});

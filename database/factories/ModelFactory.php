@@ -38,3 +38,14 @@ $factory->define(App\Country::class, function (Faker\Generator $faker) {
     ];
 });
 
+//定义一个  Lessons 模型表的 自动填充数据的工厂
+$factory->define(App\Lesson::class, function (Faker\Generator $faker) {
+    return [
+        'title' => $faker->sentence,
+        'intro' => $faker->paragraph,
+        'image'=>$faker->imageUrl(),
+        'published_at'=>$faker->dateTime,
+    ];
+});
+
+

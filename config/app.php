@@ -145,6 +145,8 @@ return [
         App\Providers\AuthServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
+        App\Providers\RocketShipServiceProvider::class,
+        App\Providers\RossProvider::class,
         /**
          * For Form
          */
@@ -165,7 +167,7 @@ return [
     |--------------------------------------------------------------------------
     |
     | This array of class aliases will be registered when this application
-    | is started. However, feel free to register as many as you wish as
+    | is started. However, feel free to register as many as you wih as
     | the aliases are "lazy" loaded so they don't hinder performance.
     |
     */
