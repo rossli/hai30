@@ -54,8 +54,9 @@ Route::get('/help',function()
 
 Route::get('/ross','RossController@index');
 Route::get('/rock','TestController@rock');
+
 Route::get('/lessons',function()
 {
-
-   return
+    $lessons = \App\Lesson::all();
+    return view('lessons.index',compact('lessons'));
 });

@@ -4,7 +4,7 @@ namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
 
-class RiakServiceProvider extends ServiceProvider
+class RIakServiceProvider extends ServiceProvider
 {
     /**
      * Bootstrap the application services.
@@ -23,8 +23,5 @@ class RiakServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->app->singleton('Riak\Contracts\Connection', function ($app) {
-            return new Connection(config('riak'));
-        });
     }
 }
