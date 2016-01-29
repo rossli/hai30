@@ -57,6 +57,15 @@ Route::get('/rock','TestController@rock');
 
 Route::get('/lessons',function()
 {
-    $lessons = \App\Lesson::all();
+    //query 方式的 分页
+    $lessons = DB::table('lessons')->paginate(10);
+    //这里就是 自定义 URI
+    $lessons->setPath('custom/url');
+    //简单的  分页
+    //$lessons = DB::table('lessons')->simplePaginate(12);
+    //采用 Elequent 方式的 分页
+    //$lessons = \App\Lesson::paginate(12);
+    //$lessons = \App\Lesson::where('votes', '>', 100)->paginate(15);
+
     return view('lessons.index',compact('lessons'));
 });

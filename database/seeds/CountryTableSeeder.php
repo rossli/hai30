@@ -16,5 +16,8 @@ class CountryTableSeeder extends Seeder
 
         //调用 全局的 factiry(),参数: Country 这个模型表,第二个参数是 生成测试数据的数量
         factory( App\Country::class, 50 )->create();
+
+        //这里 执行完毕 输出相应 的提示信息
+        $this->command->info('CountryTableSeeder has been seeded');
     }
 }
